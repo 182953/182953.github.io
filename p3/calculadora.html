@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculadora</title>
+    <style>
+   .calculator {
+            background-color: rgb(212, 202, 202) ;
+            width: 130px;
+            margin:  auto;
+            padding: 5px;
+            border: 1px solid #0818f5;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Calculator</h1>
+    <div class="calculator">
+        <input type="text" id="result" style="width : 100px; background-color: rgb(129, 218, 245); border: 1px solid #111112;">
+        <br>
+        <button onclick="appendNumber('1')">1</button>
+        <button onclick="appendNumber('2')">2</button>
+        <button onclick="appendNumber('3')">3</button>
+        <button onclick="appendOperator('*')">x</button>
+        <br>
+        <button onclick="appendNumber('4')">4</button>
+        <button onclick="appendNumber('5')">5</button>
+        <button onclick="appendNumber('6')">6</button>
+        <button onclick="appendOperator('-')">-</button>
+        <br>
+        <button onclick="appendNumber('7')">7</button>
+        <button onclick="appendNumber('8')">8</button>
+        <button onclick="appendNumber('9')">9</button>
+        <button onclick="appendOperator('+')">+</button>
+        <br>
+        <button onclick="appendNumber('0')">0</button>
+        <button onclick="appendOperator(.)">.</button>
+        <button onclick="calculateResult()">=</button>
+        <button onclick="appendOperator('/')">/</button>
+        <br>
+        <button onclick="clearResult()">Clear All</button>
+    </div>
+    <script>
+        function appendNumber(number) {
+            document.getElementById('result').value += number;
+        }
+
+        function appendOperator(operator) {
+            document.getElementById('result').value += operator;
+        }
+
+        function clearResult() {
+            document.getElementById('result').value = '';
+        }
+
+        function calculateResult() {
+            var result = eval(document.getElementById('result').value);
+            document.getElementById('result').value = result;
+        }
+    </script>
+    
+</body>
